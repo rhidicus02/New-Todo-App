@@ -1,39 +1,39 @@
 import React from "react";
+import "./modal.scss";
 
-function modal() {
+const Modals = ({
+  id,
+  title,
+  buttonName,
+  color,
+  children,
+  onClick,
+  closeBtn,
+}) => {
   return (
     <>
-      <div
-        className="modal fade"
-        id="exampleModal"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
+      <div className="modal fade" id={id} tabIndex="-1" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Modal title
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <h1 className="modal-title fs-5">{title}</h1>
             </div>
-            <div className="modal-body">...</div>
+            <div className="modal-body">{children}</div>
             <div className="modal-footer">
               <button
                 type="button"
                 className="btn btn-secondary"
                 data-bs-dismiss="modal"
+                id={closeBtn}
               >
                 Close
               </button>
-              <button type="button" className="btn btn-primary">
-                Save changes
+              <button
+                type="button"
+                className={`btn btn-${color}`}
+                onClick={onClick}
+              >
+                {buttonName}
               </button>
             </div>
           </div>
@@ -41,6 +41,6 @@ function modal() {
       </div>
     </>
   );
-}
+};
 
-export default modal;
+export default Modals;

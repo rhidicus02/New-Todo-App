@@ -1,16 +1,8 @@
-import React from "react";
+// import React, { useState } from "react";
 import "./task-main.scss";
 
-const taskMain = () => {
-  return (
-    <>
-      <div className="container-fluid">
-        <div className="red text-center">
-          <h1>Hello</h1>
-        </div>
-      </div>
-    </>
-  );
+const TaskMain = () => {
+  return <div className="container-fluid"></div>;
 };
 
-export default taskMain;
+export default TaskMain;
